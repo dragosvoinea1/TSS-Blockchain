@@ -81,7 +81,36 @@ README.md
 | **HTML/CSS/JS** | Interfață utilizator pentru dApp |
 
 ---
+## 📦 Descriere Proiect
 
+Acest proiect este o aplicație bazată pe tehnologia blockchain care implementează un **sistem de reputație**. Utilizatorii pot interacționa cu contractele inteligente pentru a oferi feedback, a vizualiza scoruri ponderate și a transfera token-uri. Administratorii beneficiază de privilegii suplimentare, precum recompensarea utilizatorilor, trimiterea de ETH și aplicarea de penalizări.
+
+---
+
+## ✨ Funcționalități
+
+### 👤 Funcționalități pentru Utilizatori
+
+- 🔌 **Conectare Wallet**: Conectează-ți portofelul Ethereum pentru a interacționa cu aplicația.
+- 💸 **Transfer Token-uri**: Trimite token-uri `MyToken` către orice adresă Ethereum.
+- 📝 **Adaugă Feedback**: Oferă feedback altor utilizatori, cu scoruri între 1 și 5.
+- 📊 **Verificare Scor Ponderat**: Vizualizează scorul de reputație al unui utilizator, calculat pe baza feedback-ului primit.
+
+### 🛡️ Funcționalități pentru Administrator
+
+- 🎁 **Recompensează Utilizatori cu Token-uri**: Trimite token-uri ca recompensă utilizatorilor activi.
+- 🪙 **Trimite ETH**: Transferă Ether direct către portofelul unui utilizator.
+- ⚠️ **Penalizează Utilizatori**: Adaugă feedback negativ pentru a reduce scorul de reputație al unui utilizator.
+
+### ⚙️ Funcționalități Generale
+
+- 🔐 **Funcționalități pe Bază de Rol**: Interfața și acțiunile disponibile se adaptează în funcție de rolul utilizatorului (admin sau user).
+- ♻️ **Persistența Sesiunii**: Conexiunea cu wallet-ul se păstrează chiar și după reîncărcarea paginii.
+- 🖥️ **Interfață Responsive**: Design modern, prietenos cu utilizatorul, cu temă gri.
+
+
+
+---
 ## 🎯 Obiectivul versiunii Alpha-Alpha
 
 - ✅ Documentare completă despre testarea blockchain
