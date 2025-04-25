@@ -159,6 +159,31 @@ Acest proiect include o suită de **teste unitare** pentru contractul inteligent
 - **Ethers.js** – Interfață pentru interacțiunea cu contractele inteligente în timpul testelor.
 
 ---
+## ⚙️ Testare de Performanță – Reputation System
+
+Această suită de teste evaluează **eficiența** și **scalabilitatea** contractului `ReputationSystem`. Scopul este de a observa timpii de execuție și consumul de gas în situații cu volum mare de date sau interacțiuni repetate.
+
+### ✅ Ce testăm
+
+| Caz de test                               | Descriere                                                                 |
+|-------------------------------------------|---------------------------------------------------------------------------|
+| `100 feedback-uri`                        | Măsurăm timpul necesar pentru a adăuga 100 de feedback-uri.              |
+| `1000 feedback-uri (stress test)`         | Evaluăm comportamentul sistemului sub încărcare intensă.                  |
+| `gas usage: addFeedback()`                | Afișează cantitatea de gas utilizată pentru adăugarea unui feedback.      |
+| `gas usage: penalizeUser()`               | Afișează costul în gas pentru penalizarea unui utilizator.               |
+| `gas usage: rewardUser()`                 | Afișează costul în gas pentru recompensarea unui utilizator cu tokeni.    |
+| `gas usage: sendRewardWithEth()`          | Verificăm consumul de gas la trimiterea de ETH.                           |
+| `feedback de la 20 utilizatori`           | Se măsoară timpul pentru feedback din 20 de conturi diferite.             |
+| `50 penalizări repetate`                  | Măsurăm eficiența penalizărilor multiple aplicate aceluiași utilizator.   |
+| `test combinat: feedback + penalizare + recompensă` | Scenariu mixt cu 50 de iterații ce implică toate acțiunile principale.   |
+| `scor după 1000 feedback-uri`             | Verificăm acuratețea scorului în cazul unui volum mare de date.           |
+
+### 🛠 Tehnologii Folosite
+
+- **Hardhat** – Mediu de dezvoltare pentru contracte inteligente.
+- **Chai** – Aserțiuni pentru validarea rezultatelor.
+- **Ethers.js** – Interacțiune cu blockchain-ul.
+- **perf_hooks** – Măsurarea timpilor de execuție în Node.js.
 
 ### ▶️ Rulare teste unitare
 
