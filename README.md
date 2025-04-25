@@ -1,3 +1,15 @@
+## 🎞️ Demo Vizual – Aplicație și Testare
+
+![Demo aplicație](./gifs/gif1.gif)
+![Demo aplicație](./gifs/gif2.gif)
+
+---
+
+### 🧪 Rulare testare automată
+
+![Rulare teste](./gifs/gif2.gif)
+
+---
 
 # ✅ 1/3 Implementare – Versiune Alpha-Alpha
 
