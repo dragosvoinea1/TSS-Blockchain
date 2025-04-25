@@ -1,15 +1,16 @@
 ## 🎞️ Demo Vizual – Aplicație și Testare
 
-![Demo aplicație](./gifs/gif1.gif)
-![Demo aplicație](./gifs/gif2.gif)
+### 🧩 Interfață aplicație
+
+<img src="./gifs/gif1.gif" alt="Demo aplicație" width="100%" />
+<img src="./gifs/gif2.gif" alt="Demo aplicație 2" width="100%" />
 
 ---
 
 ### 🧪 Rulare testare automată
 
-![Rulare teste](./gifs/gif2.gif)
+<img src="./gifs/gif3.gif" alt="Rulare teste" width="100%" />
 
----
 
 # ✅ 1/3 Implementare – Versiune Alpha-Alpha
 
