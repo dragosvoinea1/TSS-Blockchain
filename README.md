@@ -5,7 +5,7 @@ Aceasta este versiunea incipientă a aplicației de testare a unei rețele block
 
 ---
 
-## 📘 State-of-the-Art – Analiză și documentare
+## Analiză și documentare
 
 ### 🔍 Tema: *Testarea unei rețele Blockchain*
 
@@ -67,9 +67,7 @@ hardhat.config.js
 README.md
 ```
 
----
-
-### 📦 Tool-uri folosite
+### Tool-uri folosite
 
 | Tehnologie | Rol |
 |------------|-----|
@@ -80,45 +78,77 @@ README.md
 | **MetaMask** | Portofel pentru simulare utilizator |
 | **HTML/CSS/JS** | Interfață utilizator pentru dApp |
 
+## 📦 Descriere Proiect
+
+Acest proiect este o aplicație bazată pe tehnologia blockchain care implementează un **sistem de reputație**. Utilizatorii pot interacționa cu contractele inteligente pentru a oferi feedback, a vizualiza scoruri ponderate și a transfera token-uri. Administratorii beneficiază de privilegii suplimentare, precum recompensarea utilizatorilor, trimiterea de ETH și aplicarea de penalizări.
+
 ---
 
+## ✨ Funcționalități
+
+### 👤 Funcționalități pentru Utilizatori
+
+- **Conectare Wallet**: Conectează-ți portofelul Ethereum pentru a interacționa cu aplicația.
+- **Transfer Token-uri**: Trimite token-uri `MyToken` către orice adresă Ethereum.
+- **Adaugă Feedback**: Oferă feedback altor utilizatori, cu scoruri între 1 și 5.
+- **Verificare Scor Ponderat**: Vizualizează scorul de reputație al unui utilizator, calculat pe baza feedback-ului primit.
+
+### 🛡️ Funcționalități pentru Administrator
+
+- 🎁 **Recompensează Utilizatori cu Token-uri**: Trimite token-uri ca recompensă utilizatorilor activi.
+- 🪙 **Trimite ETH**: Transferă Ether direct către portofelul unui utilizator.
+- ⚠️ **Penalizează Utilizatori**: Adaugă feedback negativ pentru a reduce scorul de reputație al unui utilizator.
+
+### ⚙️ Funcționalități Generale
+
+- **Funcționalități pe Bază de Rol**: Interfața și acțiunile disponibile se adaptează în funcție de rolul utilizatorului (admin sau user).
+- **Persistența Sesiunii**: Conexiunea cu wallet-ul se păstrează chiar și după reîncărcarea paginii.
+- **Interfață Responsive**: Design modern, prietenos cu utilizatorul, cu temă gri.
+
+
+
+---
 ## 🎯 Obiectivul versiunii Alpha-Alpha
 
-- ✅ Documentare completă despre testarea blockchain
-- ✅ Alegerea tehnologiilor și framework-urilor potrivite
-- ✅ Setup complet de proiect Hardhat + frontend
-- ✅ Primele contracte scrise (`MyToken`, `ReputationSystem`)
-- ✅ Conectarea inițială wallet–frontend funcțională
-- ✅ Primele teste de tip **unitare** și **manuale**
+- Documentare completă despre testarea blockchain
+- Alegerea tehnologiilor și framework-urilor potrivite
+- Setup complet de proiect Hardhat + frontend
+- Primele contracte scrise (`MyToken`, `ReputationSystem`)
+- Conectarea inițială wallet–frontend funcțională
+- Primele teste de tip **unitare**
 
 ---
-## 🧪 Unit Testing - Reputation System
+## 🧪 Testare Unitară – Reputation System
 
-This project includes a comprehensive suite of **unit tests** for the `ReputationSystem` smart contract. The purpose of these tests is to validate the core logic of each individual function and ensure the system behaves as expected under different conditions.
+Acest proiect include o suită de **teste unitare** pentru contractul inteligent `ReputationSystem`. Scopul acestor teste este de a valida logica principală a fiecărei funcții și de a asigura că sistemul se comportă conform așteptărilor în diferite condiții.
 
-### ✅ What We Test
+### ✅ Ce testăm
 
-| Test Case                                      | Description                                                                 |
-|-----------------------------------------------|-----------------------------------------------------------------------------|
-| `addFeedback`                                  | Users can add feedback scores between 1 and 5.                              |
-| `invalid feedback score`                       | Scores below 1 or above 5 are rejected.                                     |
-| `onlyAdmin: penalizeUser()`                    | Only the contract owner can penalize users.                                 |
-| `penalizeUser()`                               | Reduces the user's reputation score based on penalty.                       |
-| `rewardUser()`                                 | Admin can reward users with tokens.                                         |
-| `sendRewardWithEth()`                          | Admin can send ETH to users.                                                |
-| `multiple feedbacks`                           | Weighted average is calculated properly from multiple scores.               |
-| `event: FeedbackAdded`                         | Event is emitted when feedback is added.                                    |
-| `insufficient token balance`                   | Reverts if contract lacks funds to reward.                                  |
-| `getWeightedScore` (public view)               | Anyone can view a user's score.                                             |
+| Caz de testare                                 | Descriere                                                                 |
+|------------------------------------------------|---------------------------------------------------------------------------|
+| `addFeedback`                                  | Utilizatorii pot adăuga scoruri de feedback între 1 și 5.                 |
+| `scor de feedback invalid`                     | Scorurile sub 1 sau peste 5 sunt respinse.                                |
+| `onlyAdmin: penalizeUser()`                    | Doar proprietarul contractului poate penaliza utilizatori.               |
+| `penalizeUser()`                               | Scade scorul de reputație al utilizatorului pe baza penalizării.          |
+| `rewardUser()`                                 | Administratorul poate recompensa utilizatorii cu token-uri.              |
+| `sendRewardWithEth()`                          | Administratorul poate trimite ETH utilizatorilor.                        |
+| `multiple feedbacks`                           | Media ponderată este calculată corect din mai multe scoruri.              |
+| `eveniment: FeedbackAdded`                     | Se emite un eveniment când este adăugat un feedback.                      |
+| `sold insuficient de token-uri`                | Tranzacția este anulată dacă contractul nu are fonduri pentru recompense. |
+| `getWeightedScore` (funcție `view` publică)    | Oricine poate vedea scorul de reputație al unui utilizator.               |
 
-### 🛠 Technologies Used
+---
 
-- **Hardhat** – Smart contract development and testing environment.
-- **Chai** – Assertion library to validate test expectations.
-- **Mocha** – JavaScript test runner used by Hardhat.
-- **Ethers.js** – Interacting with smart contracts during tests.
+### 🛠 Tehnologii utilizate
 
-### ▶️ Run Unit Tests
+- **Hardhat** – Mediu de dezvoltare și testare pentru contracte inteligente.
+- **Chai** – Bibliotecă de aserțiuni pentru validarea rezultatelor așteptate.
+- **Mocha** – Motor de testare JavaScript, integrat în Hardhat.
+- **Ethers.js** – Interfață pentru interacțiunea cu contractele inteligente în timpul testelor.
+
+---
+
+### ▶️ Rulare teste unitare
 
 ```bash
 npx hardhat test
