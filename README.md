@@ -8,7 +8,7 @@
 
 ### 🧪 Rulare testare automată
 
-<img src="./gifs/gif2.gif" alt="Rulare teste" width="100%" />
+<img src="./gifs/gift2.gif" alt="Rulare teste" width="100%" />
 
 
 # ✅ 1/3 Implementare – Versiune Alpha-Alpha
