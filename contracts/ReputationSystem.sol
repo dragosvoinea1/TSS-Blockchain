@@ -59,10 +59,10 @@ contract ReputationSystem is Ownable {
         emit RewardPaid(user, amount);
     }
 
-    function sendRewardWithEth(address payable user) external payable {
-        require(msg.value > 0, "No ETH sent");
-        user.transfer(msg.value);
-    }
+    function sendRewardWithEth(address payable user) external payable onlyAdmin {
+    require(msg.value > 0, "No ETH sent");
+    user.transfer(msg.value);
+}
 
     function calculateReward(uint baseAmount, uint multiplier) public pure returns (uint) {
         return baseAmount * multiplier;
