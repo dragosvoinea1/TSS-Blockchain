@@ -216,3 +216,30 @@ Această suită de teste validează comportamentele contractului `ReputationSyst
 - **Chai** – Aserțiuni pentru comportamentele așteptate.
 - **Ethers.js** – Interacțiuni cu contractele inteligente.
 
+- ## 🔄 Testare de Integrare – Reputation System
+
+Această suită de teste validează interacțiunea dintre componentele principale ale sistemului: contractul `ReputationSystem`, token-ul ERC-20 și biblioteca `WeightedCalculator`. Scopul este de a simula scenarii reale în care mai multe funcționalități sunt utilizate în succesiune.
+
+### ✅ Ce testăm
+
+| Caz de test                                                  | Descriere                                                                 |
+|--------------------------------------------------------------|---------------------------------------------------------------------------|
+| `user feedback + scor + recompensă`                          | Utilizatorul primește feedback, i se calculează scorul și este recompensat. |
+| `feedback multiplu + penalizare`                             | Verifică dacă penalizarea reduce scorul calculat din feedbackuri multiple. |
+| `recompensă în ETH`                                          | După feedback, utilizatorul primește ETH direct de la contract.           |
+| `feedback pentru mai mulți utilizatori`                      | Asigură scoruri independente pentru fiecare utilizator.                   |
+| `penalizarea afectează doar utilizatorul vizat`              | Doar scorul utilizatorului penalizat se modifică.                         |
+| `recompensă în tokeni pentru mai mulți utilizatori`          | Fiecare utilizator primește cantitatea corectă de tokeni.                 |
+| `recompensă în ETH pentru mai mulți utilizatori`             | Se trimite ETH la mai multe adrese și balanțele cresc corespunzător.     |
+| `penalizare fără feedback anterior`                          | Penalizarea poate fi aplicată chiar dacă nu există feedback anterior.     |
+| `penalizare și recompensă pentru același utilizator`         | Testează coexistența acțiunilor negative și pozitive asupra scorului.     |
+| `feedback de la utilizatori diferiți către aceeași adresă`   | Se calculează corect scorul mediu ponderat din feedbackuri multiple.      |
+
+### 🛠 Tehnologii Folosite
+
+- **Hardhat** – Mediu de dezvoltare pentru smart contracts.
+- **Chai** – Bibliotecă de aserțiuni pentru validare.
+- **Mocha** – Framework de testare pentru JavaScript.
+- **Ethers.js** – Interacțiune cu contractele pe blockchain.
+
+
