@@ -190,3 +190,29 @@ Această suită de teste evaluează **eficiența** și **scalabilitatea** contra
 ```bash
 npx hardhat test
 ```
+
+## 🔐 Testare de Securitate – Reputation System
+
+Această suită de teste validează comportamentele contractului `ReputationSystem` în fața situațiilor critice și a potențialelor atacuri. Sunt verificate permisiunile, validarea inputurilor și protecția contra adreselor invalide sau interacțiunilor neautorizate.
+
+### ✅ Ce testăm
+
+| Caz de test                                      | Descriere                                                                 |
+|--------------------------------------------------|---------------------------------------------------------------------------|
+| `onlyAdmin: penalizeUser()`                      | Doar adminul poate penaliza un utilizator.                                |
+| `onlyAdmin: rewardUser()`                        | Doar adminul poate trimite tokeni ca recompensă.                          |
+| `onlyAdmin: sendRewardWithEth()`                 | Doar adminul poate trimite ETH utilizatorilor.                            |
+| `invalid feedback score`                         | Scorurile <1 sau >5 sunt respinse.                                        |
+| `invalid penalty score`                          | Penalizările cu scoruri invalide sunt respinse.                           |
+| `self-feedback permis`                           | Un utilizator își poate oferi feedback (dacă nu este interzis explicit).  |
+| `getWeightedScore` (public view)                 | Oricine poate citi scorul de reputație al altuia.                         |
+| `no direct score manipulation`                   | Nu există metode publice pentru manipularea directă a scorului.           |
+| `spam feedback (50)`                             | Sistemul permite multiple feedbackuri, dacă nu este limitat explicit.     |
+| `ETH fallback protection`                        | Contractul respinge transferuri ETH directe, fără funcție `receive()`.    |
+
+### 🛠 Tehnologii Folosite
+
+- **Hardhat** – Mediu de testare și dezvoltare Ethereum.
+- **Chai** – Aserțiuni pentru comportamentele așteptate.
+- **Ethers.js** – Interacțiuni cu contractele inteligente.
+
