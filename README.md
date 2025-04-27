@@ -210,7 +210,7 @@ Această suită de teste validează comportamentele contractului `ReputationSyst
 - **Chai** – Aserțiuni pentru comportamentele așteptate.
 - **Ethers.js** – Interacțiuni cu contractele inteligente.
 
-- ## 🔄 Testare de Integrare – Reputation System
+## 🔄 Testare de Integrare – Reputation System
 
 Această suită de teste validează interacțiunea dintre componentele principale ale sistemului: contractul `ReputationSystem`, token-ul ERC-20 și biblioteca `WeightedCalculator`. Scopul este de a simula scenarii reale în care mai multe funcționalități sunt utilizate în succesiune.
 
