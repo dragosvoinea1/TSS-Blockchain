@@ -185,12 +185,6 @@ Această suită de teste evaluează **eficiența** și **scalabilitatea** contra
 - **Ethers.js** – Interacțiune cu blockchain-ul.
 - **perf_hooks** – Măsurarea timpilor de execuție în Node.js.
 
-### ▶️ Rulare teste unitare
-
-```bash
-npx hardhat test
-```
-
 ## 🔐 Testare de Securitate – Reputation System
 
 Această suită de teste validează comportamentele contractului `ReputationSystem` în fața situațiilor critice și a potențialelor atacuri. Sunt verificate permisiunile, validarea inputurilor și protecția contra adreselor invalide sau interacțiunilor neautorizate.
@@ -242,4 +236,8 @@ Această suită de teste validează interacțiunea dintre componentele principal
 - **Mocha** – Framework de testare pentru JavaScript.
 - **Ethers.js** – Interacțiune cu contractele pe blockchain.
 
+### ▶️ Rulare teste unitare
 
+```bash
+npx hardhat test
+```
