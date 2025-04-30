@@ -236,8 +236,66 @@ Această suită de teste validează interacțiunea dintre componentele principal
 - **Mocha** – Framework de testare pentru JavaScript.
 - **Ethers.js** – Interacțiune cu contractele pe blockchain.
 
-### ▶️ Rulare teste unitare
+## 🤖 Testare asistată de AI – Gemini (Google)
 
-```bash
-npx hardhat test
-```
+Pentru a evalua capacitatea unui tool AI de a genera teste automatizate pentru smart contracts, am utilizat [**Gemini**](https://gemini.google.com/) – un model AI dezvoltat de Google.
+
+### 📥 Prompt trimis către Gemini
+
+Generate unit tests, integration tests, performance tests and security tests for the following Solidity smart contracts deployed on a local Hardhat Ethereum network. Use Hardhat + Chai for testing.
+
+
+Au fost incluse în prompt următoarele contracte:
+- `ReputationSystem.sol`
+- `MyToken.sol`
+- `WeightedCalculator.sol`
+
+---
+
+### 📄 Teste generate de Gemini
+
+AI-ul a generat un fișier de test ce conținea:
+- Câteva teste unitare de bază (`addFeedback`, `penalizeUser`)
+- 2 teste de integrare (`rewardUser`, `sendRewardWithEth`)
+- 1 test de performanță simplificat (10 feedbackuri într-o buclă)
+- Câteva teste de securitate legate de `onlyAdmin` și scoruri invalide
+
+---
+
+### ❌ Probleme la rulare (Hardhat)
+
+Inițial, testele generate de Gemini **nu rulau**, din cauza:
+- Lipsa importului `ethers.parseEther` → `TypeError: Cannot read properties of undefined`
+- Folosirea greșită a `ethers.BigNumber.from(...)`
+- Lipsa `beforeEach` consistent, ceea ce ducea la referințe `undefined`
+- Lipsa setup-ului corect al contractelor (fără deploy, fără ownership)
+- Niciun test pentru `event FeedbackAdded`, edge cases, scoruri negative, sau adresă zero
+
+---
+
+### 🧠 Comparație între Testele AI și Testele Proprii
+
+| Funcționalitate                | Test AI (Gemini)                     | Test propriu                         |
+|-------------------------------|--------------------------------------|--------------------------------------|
+| `addFeedback`                 | Test minim (scor = 4)                | Test scor corect + scor invalid + timestamp |
+| `penalizeUser`                | Doar test pentru acces `onlyAdmin`  | Test scor negativ, invalid, penalizare user 0 |
+| `getWeightedScore`           | Test simplu fără timestamp           | Test cu manipulare timp + calcul scor ponderat |
+| `rewardUser`                 | Fără setup token                     | Test cu transfer token, balans inițial + final |
+| `sendRewardWithEth`          | Fără test balans                     | Test balans ETH inițial + final, revert fără ETH |
+| `performance`                | Doar `Date.now()` JS                 | Test real cu 100 feedbackuri + limită de timp |
+| `security`                   | Doar `onlyAdmin`                     | Include adresă zero, self-feedback, fallback |
+
+---
+
+### 🧾 Concluzie
+
+Deși Gemini oferă o bază de pornire pentru testare automată, testele generate:
+- sunt incomplete și neoptimizate,
+- nu acoperă cazuri-limită sau evenimente,
+- conțin erori de sintaxă și lipsă de context blockchain,
+- necesită corectare manuală semnificativă.
+
+📌 **Testele dezvoltate manual** sunt mai robuste, validate, și acoperă corect funcționalitatea sistemului în condiții reale.
+
+---
+
