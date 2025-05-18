@@ -157,6 +157,7 @@ Această suită de teste evaluează **eficiența** și **scalabilitatea** contra
 | `test combinat: feedback + penalizare + recompensă` | Scenariu mixt cu 50 de iterații ce implică toate acțiunile principale.   |
 | `scor după 1000 feedback-uri`             | Verificăm acuratețea scorului în cazul unui volum mare de date.           |
 
+---
 
 ## 🔐 Testare de Securitate – Reputation System
 
@@ -177,6 +178,7 @@ Această suită de teste validează comportamentele contractului `ReputationSyst
 | `spam feedback (50)`                             | Sistemul permite multiple feedbackuri, dacă nu este limitat explicit.     |
 | `ETH fallback protection`                        | Contractul respinge transferuri ETH directe, fără funcție `receive()`.    |
 
+---
 
 ## 🔄 Testare de Integrare – Reputation System
 
