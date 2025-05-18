@@ -10,7 +10,6 @@
 
 <img src="./gifs/gift2.gif" alt="Rulare teste" width="100%" />
 
-
 ### 🔍 Tema: *Testarea unei rețele Blockchain*
 
 Testarea rețelelor blockchain este esențială pentru a garanta:
@@ -204,6 +203,7 @@ Această suită de teste validează interacțiunea dintre componentele principal
 - **Chai** – Bibliotecă de aserțiuni pentru validare.
 - **Mocha** – Framework de testare pentru JavaScript.
 - **Ethers.js** – Interacțiune cu contractele pe blockchain.
+  
 
 ## 🤖 Testare asistată de AI – Gemini (Google)
 
@@ -232,7 +232,7 @@ AI-ul a generat un fișier de test ce conținea:
 <details>
   <summary>📸 Vezi captură de ecran cu testele rulate</summary>
 
-  ![Testele Gemini în termina](./gifs/gemini-tests.jpeg)
+  ![Testele Gemini în terminal](./gifs/gemini-tests.jpeg)
 
 </details>
 
