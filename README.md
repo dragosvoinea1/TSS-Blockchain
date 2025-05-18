@@ -10,6 +10,9 @@
 
 <img src="./gifs/gift2.gif" alt="Rulare teste" width="100%" />
 
+### Prezentare Powerpoint
+📂 [Deschide prezentarea PowerPoint](https://github.com/dragosvoinea1/TSS-Blockchain/blob/main/docs/TSS-Blockchain.pptx?raw=true)
+
 ### 🔍 Tema: *Testarea unei rețele Blockchain*
 
 Testarea rețelelor blockchain este esențială pentru a garanta:
