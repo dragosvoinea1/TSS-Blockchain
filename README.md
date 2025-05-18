@@ -213,8 +213,6 @@ Au fost incluse în prompt următoarele contracte:
 - `MyToken.sol`
 - `WeightedCalculator.sol`
 
----
-
 ### 📄 Teste generate de Gemini
 
 AI-ul a generat un fișier de test ce conținea:
@@ -230,7 +228,6 @@ AI-ul a generat un fișier de test ce conținea:
 
 </details>
 
----
 
 ### ❌ Probleme la rulare (Hardhat)
 
@@ -241,7 +238,6 @@ Inițial, testele generate de Gemini **nu rulau**, din cauza:
 - Lipsa setup-ului corect al contractelor (fără deploy, fără ownership)
 - Niciun test pentru `event FeedbackAdded`, edge cases, scoruri negative, sau adresă zero
 
----
 
 ### 🧠 Comparație între Testele AI și Testele Proprii
 
@@ -255,7 +251,6 @@ Inițial, testele generate de Gemini **nu rulau**, din cauza:
 | `performance`                | Doar `Date.now()` JS                 | Test real cu 100 feedbackuri + limită de timp |
 | `security`                   | Doar `onlyAdmin`                     | Include adresă zero, self-feedback, fallback |
 
----
 
 ### 🧾 Concluzie
 
@@ -268,6 +263,7 @@ Deși Gemini oferă o bază de pornire pentru testare automată, testele generat
 📌 **Testele dezvoltate manual** sunt mai robuste, validate, și acoperă corect funcționalitatea sistemului în condiții reale.
 
 ---
+
 ### 📚 Resurse și articole științifice/documentații studiate
 
 | Nr | Sursa | Tip | Conținut |
