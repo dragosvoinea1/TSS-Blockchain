@@ -10,8 +10,12 @@
 
 <img src="./gifs/gift2.gif" alt="Rulare teste" width="100%" />
 
+---
+
 ### Prezentare Powerpoint
 📂 [Deschide prezentarea PowerPoint](https://github.com/dragosvoinea1/TSS-Blockchain/blob/main/docs/TSS-Blockchain.pptx?raw=true)
+
+---
 
 ### 🔍 Tema: *Testarea unei rețele Blockchain*
 
@@ -101,6 +105,18 @@ Acest proiect este o aplicație bazată pe tehnologia blockchain care implemente
 
 ---
 
+
+### 🛠 Tehnologii utilizate în testare
+
+- **Hardhat** – Mediu de dezvoltare și testare pentru contracte inteligente.
+- **Chai** – Bibliotecă de aserțiuni pentru validarea rezultatelor așteptate.
+- **Mocha** – Motor de testare JavaScript, integrat în Hardhat.
+- **Ethers.js** – Interfață pentru interacțiunea cu contractele inteligente în timpul testelor.
+- **perf_hooks** – Măsurarea timpilor de execuție în Node.js.
+  
+
+---
+
 ## 🧪 Testare Unitară – Reputation System
 
 Acest proiect include o suită de **teste unitare** pentru contractul inteligent `ReputationSystem`. Scopul acestor teste este de a valida logica principală a fiecărei funcții și de a asigura că sistemul se comportă conform așteptărilor în diferite condiții.
@@ -122,14 +138,6 @@ Acest proiect include o suită de **teste unitare** pentru contractul inteligent
 
 ---
 
-### 🛠 Tehnologii utilizate
-
-- **Hardhat** – Mediu de dezvoltare și testare pentru contracte inteligente.
-- **Chai** – Bibliotecă de aserțiuni pentru validarea rezultatelor așteptate.
-- **Mocha** – Motor de testare JavaScript, integrat în Hardhat.
-- **Ethers.js** – Interfață pentru interacțiunea cu contractele inteligente în timpul testelor.
-
----
 ## ⚙️ Testare de Performanță – Reputation System
 
 Această suită de teste evaluează **eficiența** și **scalabilitatea** contractului `ReputationSystem`. Scopul este de a observa timpii de execuție și consumul de gas în situații cu volum mare de date sau interacțiuni repetate.
@@ -149,12 +157,6 @@ Această suită de teste evaluează **eficiența** și **scalabilitatea** contra
 | `test combinat: feedback + penalizare + recompensă` | Scenariu mixt cu 50 de iterații ce implică toate acțiunile principale.   |
 | `scor după 1000 feedback-uri`             | Verificăm acuratețea scorului în cazul unui volum mare de date.           |
 
-### 🛠 Tehnologii Folosite
-
-- **Hardhat** – Mediu de dezvoltare pentru contracte inteligente.
-- **Chai** – Aserțiuni pentru validarea rezultatelor.
-- **Ethers.js** – Interacțiune cu blockchain-ul.
-- **perf_hooks** – Măsurarea timpilor de execuție în Node.js.
 
 ## 🔐 Testare de Securitate – Reputation System
 
@@ -175,11 +177,6 @@ Această suită de teste validează comportamentele contractului `ReputationSyst
 | `spam feedback (50)`                             | Sistemul permite multiple feedbackuri, dacă nu este limitat explicit.     |
 | `ETH fallback protection`                        | Contractul respinge transferuri ETH directe, fără funcție `receive()`.    |
 
-### 🛠 Tehnologii Folosite
-
-- **Hardhat** – Mediu de testare și dezvoltare Ethereum.
-- **Chai** – Aserțiuni pentru comportamentele așteptate.
-- **Ethers.js** – Interacțiuni cu contractele inteligente.
 
 ## 🔄 Testare de Integrare – Reputation System
 
@@ -200,14 +197,8 @@ Această suită de teste validează interacțiunea dintre componentele principal
 | `penalizare și recompensă pentru același utilizator`         | Testează coexistența acțiunilor negative și pozitive asupra scorului.     |
 | `feedback de la utilizatori diferiți către aceeași adresă`   | Se calculează corect scorul mediu ponderat din feedbackuri multiple.      |
 
-### 🛠 Tehnologii Folosite
-
-- **Hardhat** – Mediu de dezvoltare pentru smart contracts.
-- **Chai** – Bibliotecă de aserțiuni pentru validare.
-- **Mocha** – Framework de testare pentru JavaScript.
-- **Ethers.js** – Interacțiune cu contractele pe blockchain.
+---
   
-
 ## 🤖 Testare asistată de AI – Gemini (Google)
 
 Pentru a evalua capacitatea unui tool AI de a genera teste automatizate pentru smart contracts, am utilizat [**Gemini**](https://gemini.google.com/) – un model AI dezvoltat de Google.
